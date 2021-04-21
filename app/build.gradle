@@ -64,4 +64,10 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:2.34.1-beta"
     kapt "com.google.dagger:hilt-android-compiler:2.31.1-alpha"
+    // Room
+    implementation("androidx.room:room-runtime:2.2.6")
+    annotationProcessor("androidx.room:room-compiler:2.2.6")
+    // Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
