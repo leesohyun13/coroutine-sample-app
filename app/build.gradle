@@ -5,6 +5,9 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+def properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -16,6 +19,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField("String", "KAKAO_CAFE_REST_API_KEY", properties.getProperty('KAKAO_CAFE_REST_API_KEY'))
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
