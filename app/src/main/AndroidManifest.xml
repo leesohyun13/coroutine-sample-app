@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CoroutineSampleApp">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ui.MainActivity"></activity>
     </application>
 
 </manifest>
