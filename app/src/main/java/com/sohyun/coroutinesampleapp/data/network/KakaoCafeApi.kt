@@ -9,8 +9,8 @@ import retrofit2.http.Query
 
 interface KakaoCafeApi {
     @GET(SUB_PATH_CAFE)
-    fun searchCafe(
-        @Header(SCHEMA_REQUEST_HEADER_AUTHORIZATION) restApiKey: String = BuildConfig.KAKAO_CAFE_REST_API_KEY,
+    suspend fun searchCafe(
+        @Header(SCHEMA_REQUEST_HEADER_AUTHORIZATION) restApiKey: String = "KakaoAK ${BuildConfig.KAKAO_CAFE_REST_API_KEY}",
         @Query(SCHEMA_QUERY) query: String,
         @Query(SCHEMA_QUERY_SORT) sort: KakaoSearchSortType?,
         @Query(SCHEMA_QUERY_PAGE) page: Int? = BOOK_STARTING_PAGE_INDEX,
@@ -18,7 +18,9 @@ interface KakaoCafeApi {
     ): KaKaoCafeResponse
 
     companion object {
-        const val SUB_PATH_CAFE = "/v2/search/cafe"
+        const val KAKAO_API_URL = "https://dapi.kakao.com/"
+
+        const val SUB_PATH_CAFE = "v2/search/cafe"
         const val BOOK_STARTING_PAGE_INDEX = 1
         const val BOOK_PAGING_SIZE = 50
 
