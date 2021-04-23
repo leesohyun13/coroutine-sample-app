@@ -8,7 +8,7 @@
 
         <variable
             name="viewmodel"
-            type="com.sohyun.coroutinesampleapp.ui.main.MainViewModel" />
+            type="com.sohyun.coroutinesampleapp.ui.main.CafeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,11 +30,21 @@
 
         <EditText
             android:id="@+id/cafe_search_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="@string/cafe_search_hint"
             android:textSize="15sp"
+            app:layout_constraintRight_toLeftOf="@id/search_button"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cafe_search_button_text"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:layout_constraintRight_toRightOf="parent"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cafe_search_recyclerview"
