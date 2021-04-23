@@ -12,7 +12,7 @@ interface KakaoCafeApi {
     suspend fun searchCafe(
         @Header(SCHEMA_REQUEST_HEADER_AUTHORIZATION) restApiKey: String = "KakaoAK ${BuildConfig.KAKAO_CAFE_REST_API_KEY}",
         @Query(SCHEMA_QUERY) query: String,
-        @Query(SCHEMA_QUERY_SORT) sort: KakaoSearchSortType?,
+        @Query(SCHEMA_QUERY_SORT) sort: KakaoSearchSortType? = KakaoSearchSortType.ACCURACY,
         @Query(SCHEMA_QUERY_PAGE) page: Int? = BOOK_STARTING_PAGE_INDEX,
         @Query(SCHEMA_QUERY_SIZE) size: Int = BOOK_PAGING_SIZE,
     ): KaKaoCafeResponse
