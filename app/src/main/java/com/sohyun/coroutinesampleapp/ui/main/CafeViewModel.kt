@@ -3,7 +3,7 @@ package com.sohyun.coroutinesampleapp.ui.main
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.sohyun.coroutinesampleapp.data.network.NetworkStatus
-import com.sohyun.coroutinesampleapp.data.remote.model.CafeData
+import com.sohyun.coroutinesampleapp.data.model.CafeData
 import com.sohyun.coroutinesampleapp.data.repos.KakaoCafeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package com.sohyun.coroutinesampleapp.data.remote.model
+package com.sohyun.coroutinesampleapp.data.model
 
 import kotlinx.serialization.Serializable
 

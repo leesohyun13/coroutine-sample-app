@@ -2,7 +2,7 @@ package com.sohyun.coroutinesampleapp.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.sohyun.coroutinesampleapp.data.remote.model.CafeData
+import com.sohyun.coroutinesampleapp.data.model.CafeData
 import com.sohyun.coroutinesampleapp.databinding.ItemCafeListBinding
 import com.sohyun.coroutinesampleapp.ui.base.BaseRecyclerViewAdapter
 import com.sohyun.coroutinesampleapp.ui.base.BaseViewHolder
