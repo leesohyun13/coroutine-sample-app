@@ -7,6 +7,10 @@
     <data>
 
         <variable
+            name="view"
+            type="android.view.View" />
+
+        <variable
             name="viewmodel"
             type="com.sohyun.coroutinesampleapp.ui.main.CafeViewModel" />
     </data>
@@ -34,8 +38,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/cafe_search_hint"
             android:textSize="15sp"
-            app:layout_constraintRight_toLeftOf="@id/search_button"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/search_button"
             app:layout_constraintTop_toBottomOf="@id/title" />
 
         <Button
@@ -43,15 +47,26 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="@string/cafe_search_button_text"
-            app:layout_constraintTop_toBottomOf="@id/title"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cafe_search_recyclerview"
+            setItems="@{viewmodel.cafeList}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:overScrollMode="never"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cafe_search_edittext" />
 
+        <ProgressBar
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:visibility="@{viewmodel.showProgressbar ? view.VISIBLE : view.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
