@@ -3,7 +3,7 @@ package com.sohyun.coroutinesampleapp.ui.base
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>() :
+abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>> :
     RecyclerView.Adapter<H>() {
 
     private val items: MutableList<T> = mutableListOf()
@@ -19,6 +19,7 @@ abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>() :
     open fun setData(items: List<T>) {
         this.items.clear()
         this.items.addAll(items)
+        notifyDataSetChanged()
     }
 }
 
