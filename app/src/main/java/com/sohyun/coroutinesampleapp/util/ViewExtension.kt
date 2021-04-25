@@ -21,7 +21,13 @@ fun Fragment.hideKeyboard() {
     view?.let { activity?.hideKeyboard(it) }
 }
 
-fun setImageOnView(view: ImageView, res: String) {
+fun setImageUrlOnView(view: ImageView, res: String) {
+    Glide.with(view.context)
+        .load(res)
+        .into(view)
+}
+
+fun setDrawableOnView(view: ImageView, res: Int) {
     Glide.with(view.context)
         .load(res)
         .into(view)
