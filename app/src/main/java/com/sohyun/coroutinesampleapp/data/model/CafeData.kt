@@ -10,4 +10,5 @@ data class CafeData(
     val cafename: String,
     val thumbnail: String,
     val datetime: String, // 카페 글 작성시간, ISO 8601 형식, [YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].000+[tz]
+    val like: Boolean
 )

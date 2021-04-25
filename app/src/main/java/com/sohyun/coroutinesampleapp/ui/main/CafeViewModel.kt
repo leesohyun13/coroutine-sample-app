@@ -24,7 +24,7 @@ class CafeViewModel @Inject constructor(
                 showProgressbar.value = false
                 //
                 val list = responses.data.documents
-                    .map { CafeData(it.title, it.contents, it.url, it.cafename, it.thumbnail, it.datetime) }
+                    .map { CafeData(it.title, it.contents, it.url, it.cafename, it.thumbnail, it.datetime, false) } // FIXME
                     .toList()
                 cafeList.postValue(list)
             }
