@@ -1,4 +1,4 @@
-package com.sohyun.coroutinesampleapp.data.repos
+package com.sohyun.coroutinesampleapp.data.repository
 
 import com.sohyun.coroutinesampleapp.data.network.NetworkStatus
 import kotlinx.coroutines.Dispatchers

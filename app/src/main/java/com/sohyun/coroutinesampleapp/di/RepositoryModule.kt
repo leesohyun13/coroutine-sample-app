@@ -1,8 +1,8 @@
 package com.sohyun.coroutinesampleapp.di
 
 import com.sohyun.coroutinesampleapp.data.network.KakaoCafeApi
-import com.sohyun.coroutinesampleapp.data.repos.KakaoCafeRepository
-import com.sohyun.coroutinesampleapp.data.repos.KakaoCafeRepositoryImpl
+import com.sohyun.coroutinesampleapp.data.repository.KakaoCafeRepository
+import com.sohyun.coroutinesampleapp.data.repository.KakaoCafeRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
