@@ -2,6 +2,7 @@ package com.sohyun.coroutinesampleapp.ui.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import com.sohyun.coroutinesampleapp.R
 import com.sohyun.coroutinesampleapp.data.model.CafeData
 import com.sohyun.coroutinesampleapp.databinding.ItemCafeListBinding
@@ -11,7 +12,7 @@ import com.sohyun.coroutinesampleapp.util.changeHtmlToText
 import com.sohyun.coroutinesampleapp.util.setDrawableOnView
 import com.sohyun.coroutinesampleapp.util.setImageUrlOnView
 
-class CafeAdapter: BaseRecyclerViewAdapter<CafeData, CafeAdapter.CafeHolder>() {
+class CafeAdapter: BaseRecyclerViewAdapter<CafeData, CafeAdapter.CafeHolder>(DiffCallback()) {
 
     inner class CafeHolder(private val binding: ItemCafeListBinding) :
         BaseViewHolder<CafeData>(binding.root) {
@@ -40,4 +41,16 @@ class CafeAdapter: BaseRecyclerViewAdapter<CafeData, CafeAdapter.CafeHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CafeAdapter.CafeHolder = CafeHolder(
         ItemCafeListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
+}
+
+private class DiffCallback : DiffUtil.ItemCallback<CafeData>() {
+    // 두 객체가 같은 항목인지 확인함
+    override fun areItemsTheSame(oldItem: CafeData, newItem: CafeData): Boolean {
+        return oldItem.url == newItem.url
+    }
+
+    // 두 항목의 데이터가 같은지 확인함
+    override fun areContentsTheSame(oldItem: CafeData, newItem: CafeData): Boolean {
+        return oldItem == newItem
+    }
 }
