@@ -1,10 +1,12 @@
 package com.sohyun.coroutinesampleapp.ui.base
 
 import android.view.View
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>> :
-    RecyclerView.Adapter<H>() {
+abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>(diffCallback: DiffUtil.ItemCallback<T>) :
+    ListAdapter<T,H>(diffCallback) {
 
     private val items: MutableList<T> = mutableListOf()
 
@@ -12,14 +14,14 @@ abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>> :
         holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
-
-    open fun setData(items: List<T>) {
+    open fun setData(newItems: List<T>) {
         this.items.clear()
         this.items.addAll(items)
-        notifyDataSetChanged()
+         submitList(items)
+    }
+
+    override fun getItem(position: Int): T {
+        return super.getItem(position)
     }
 }
 
