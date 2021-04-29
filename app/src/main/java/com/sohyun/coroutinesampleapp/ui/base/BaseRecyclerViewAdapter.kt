@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>(diffCallback: DiffUtil.ItemCallback<T>) :
-    ListAdapter<T,H>(diffCallback) {
+    ListAdapter<T, H>(diffCallback) {
 
     private val items: MutableList<T> = mutableListOf()
 
@@ -16,8 +16,8 @@ abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>(diffCallback: D
 
     open fun setData(newItems: List<T>) {
         this.items.clear()
-        this.items.addAll(items)
-         submitList(items)
+        this.items.addAll(newItems)
+        submitList(items)
     }
 
     override fun getItem(position: Int): T {
