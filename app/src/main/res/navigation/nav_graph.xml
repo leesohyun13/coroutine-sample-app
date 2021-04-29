@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_search">
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.sohyun.coroutinesampleapp.ui.main.MainFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/nav_like"
+        android:name="com.sohyun.coroutinesampleapp.ui.like.LikeListFragment"
+        android:label="fragment_lik"
+        tools:layout="@layout/fragment_like_list" />
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.sohyun.coroutinesampleapp.ui.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+</navigation>
