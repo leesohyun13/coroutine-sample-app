@@ -20,6 +20,11 @@ abstract class BaseRecyclerViewAdapter<T, H : BaseViewHolder<T>>(diffCallback: D
         submitList(items)
     }
 
+    open fun removeItem(item: T) {
+        this.items.remove(item)
+        notifyDataSetChanged()
+    }
+
     override fun getItem(position: Int): T {
         return super.getItem(position)
     }

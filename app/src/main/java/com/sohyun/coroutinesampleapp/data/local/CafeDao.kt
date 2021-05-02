@@ -12,11 +12,11 @@ interface CafeDao {
     @Query("SELECT * FROM cafe")
     fun getAll(): List<CafeData>
 
-    @Query("SELECT * FROM cafe where `like` LIKE 'true'")
+    @Query("SELECT * FROM cafe WHERE isLike == 1") // true = 1
     fun getLikeList(): Flow<List<CafeData>> // 테이블의 데이터가 변경될 때마다 전체 결과 세트를 다시 내보냄
 
     @Insert
-    fun insertItem(vararg cafeData: CafeData)
+    fun insertItem(cafeData: CafeData)
 
     @Delete
     fun deleteItem(cafeData: CafeData)
