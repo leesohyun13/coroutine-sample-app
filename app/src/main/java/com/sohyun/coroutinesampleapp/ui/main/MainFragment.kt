@@ -19,6 +19,7 @@ class MainFragment: BaseFragment<FragmentMainBinding>(R.layout.fragment_main), O
     private val mainViewModel: CafeViewModel by viewModels()
     private lateinit var cafeAdapter: CafeAdapter
 
+    // FIXME add save search list
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         with(binding) {
@@ -44,6 +45,6 @@ class MainFragment: BaseFragment<FragmentMainBinding>(R.layout.fragment_main), O
     }
 
     override fun clickLike(isLike: Boolean, item: CafeData) {
-        if (isLike) mainViewModel.clickLike(item) else mainViewModel.removeLike(item)
+        if (isLike) mainViewModel.removeLike(item) else mainViewModel.clickLike(item)
     }
 }
