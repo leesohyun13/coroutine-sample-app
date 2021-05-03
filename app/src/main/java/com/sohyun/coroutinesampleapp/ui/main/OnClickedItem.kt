@@ -2,6 +2,6 @@ package com.sohyun.coroutinesampleapp.ui.main
 
 import com.sohyun.coroutinesampleapp.data.model.CafeData
 
-interface OnClickItem {
+interface OnClickedItem {
     fun clickLike(isLike: Boolean, item: CafeData)
 }

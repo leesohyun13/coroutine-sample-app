@@ -12,7 +12,7 @@ import com.sohyun.coroutinesampleapp.util.changeHtmlToText
 import com.sohyun.coroutinesampleapp.util.setDrawableOnView
 import com.sohyun.coroutinesampleapp.util.setImageUrlOnView
 
-class CafeAdapter constructor(val clickListener: OnClickItem): BaseRecyclerViewAdapter<CafeData, CafeAdapter.CafeHolder>(DiffCallback()) {
+class CafeAdapter constructor(val clickedListener: OnClickedItem): BaseRecyclerViewAdapter<CafeData, CafeAdapter.CafeHolder>(DiffCallback()) {
 
     inner class CafeHolder(private val binding: ItemCafeListBinding) :
         BaseViewHolder<CafeData>(binding.root) {
@@ -22,7 +22,7 @@ class CafeAdapter constructor(val clickListener: OnClickItem): BaseRecyclerViewA
             binding.like.setOnClickListener {
                 item.like = !item.like
                 if (item.like) setDrawableOnView(binding.like, R.drawable.baseline_star_black_20) else setDrawableOnView(binding.like, R.drawable.baseline_star_border_black_20)
-                clickListener.clickLike(!item.like, item)
+                clickedListener.clickLike(!item.like, item)
             }
         }
 

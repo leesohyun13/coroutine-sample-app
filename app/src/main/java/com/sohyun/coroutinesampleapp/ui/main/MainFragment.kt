@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MainFragment: BaseFragment<FragmentMainBinding>(R.layout.fragment_main), OnClickItem {
+class MainFragment: BaseFragment<FragmentMainBinding>(R.layout.fragment_main), OnClickedItem {
     private val mainViewModel: CafeViewModel by viewModels()
     private lateinit var cafeAdapter: CafeAdapter
 
