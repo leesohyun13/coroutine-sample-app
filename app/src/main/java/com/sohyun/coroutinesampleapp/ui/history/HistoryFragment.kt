@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.sohyun.coroutinesampleapp.R
 import com.sohyun.coroutinesampleapp.databinding.FragmentHistoryBinding
 import com.sohyun.coroutinesampleapp.ui.base.BaseFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HistoryFragment : BaseFragment<FragmentHistoryBinding>(R.layout.fragment_history) {
     private val historyViewModel: HistoryViewModel by viewModels()
     private lateinit var historyAdapter: HistoryAdapter
