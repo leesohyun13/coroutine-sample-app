@@ -5,10 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.sohyun.coroutinesampleapp.data.model.CafeData
+import com.sohyun.coroutinesampleapp.data.model.SearchData
 
-@Database(entities = [CafeData::class], version = 1)
+@Database(entities = [CafeData::class, SearchData::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun cafeDao(): CafeDao
+    abstract fun searchDao(): SearchDao
 
     companion object {
         private const val DATABASE_NAME = "kakao-cafe.db"

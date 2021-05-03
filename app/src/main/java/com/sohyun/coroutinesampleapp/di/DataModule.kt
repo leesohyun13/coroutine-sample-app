@@ -17,5 +17,9 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideBookDao(appDatabase: AppDatabase) = appDatabase.cafeDao()
+    fun provideCafeDao(appDatabase: AppDatabase) = appDatabase.cafeDao()
+
+    @Singleton
+    @Provides
+    fun provideSearchDao(appDatabase: AppDatabase) = appDatabase.searchDao()
 }
