@@ -7,21 +7,28 @@ import com.sohyun.coroutinesampleapp.data.model.SearchData
 import com.sohyun.coroutinesampleapp.databinding.ItemHistoryListBinding
 import com.sohyun.coroutinesampleapp.ui.base.BaseRecyclerViewAdapter
 import com.sohyun.coroutinesampleapp.ui.base.BaseViewHolder
+import java.text.SimpleDateFormat
+import java.util.*
 
-class HistoryAdapter : BaseRecyclerViewAdapter<SearchData, HistoryAdapter.ViewHolder>(DiffCallback()) {
+class HistoryAdapter constructor(
+        private val clickedItem: OnClickedItem,
+): BaseRecyclerViewAdapter<SearchData, HistoryAdapter.ViewHolder>(DiffCallback()) {
     inner class ViewHolder(private val binding: ItemHistoryListBinding) : BaseViewHolder<SearchData>(binding.root) {
         private lateinit var item: SearchData
 
         init {
             // Remove item
-            binding.close.setOnClickListener {  }
+            binding.close.setOnClickListener {
+                clickedItem.removeHistoryItem(item)
+                removeItem(item)
+            }
         }
 
         override fun bind(item: SearchData) {
             this.item = item
             with(binding) {
                 searchText.text = item.search
-                time.text = item.date
+                time.text = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(item.date)
             }
         }
     }

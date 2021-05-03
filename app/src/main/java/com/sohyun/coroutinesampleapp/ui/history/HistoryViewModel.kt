@@ -20,7 +20,7 @@ class HistoryViewModel @Inject constructor(
 ): ViewModel() {
     private val _historyList =
             kakaoCafeRepository.getSearchHistory()
-            .map { it }
+            .map { it -> it.sortedByDescending { it.date } }
             .asLiveData(
                     viewModelScope.coroutineContext,
                     500
