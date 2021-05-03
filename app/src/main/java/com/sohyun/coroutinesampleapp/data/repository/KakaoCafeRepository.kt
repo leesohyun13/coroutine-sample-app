@@ -11,7 +11,7 @@ interface KakaoCafeRepository {
     suspend fun likeItem(cafe: CafeData)
     fun getLikeList(): Flow<List<CafeData>>
     suspend fun deleteItem(cafe: CafeData)
-    fun saveSearchHistoryItem(searchData: SearchData)
+    suspend fun saveSearchHistoryItem(searchData: SearchData)
     fun deleteSearchHistoryItem(searchData: SearchData)
     fun getSearchHistory(): Flow<List<SearchData>>
 }

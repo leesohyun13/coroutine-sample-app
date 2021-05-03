@@ -13,12 +13,10 @@ class KakaoCafeRepositoryImpl @Inject constructor(
         private val kakaoCafeApi: KakaoCafeApi,
         private val localDataSource: KakaoCafeLocalDataSource
 ) : KakaoCafeRepository, BaseRepository() {
-
     override suspend fun getSearchResult(
             query: String,
             page: Int?
-    ): NetworkStatus<KaKaoCafeResponse> =
-            safeApiCall { kakaoCafeApi.searchCafe(query = query, page = page) }
+    ): NetworkStatus<KaKaoCafeResponse> = safeApiCall { kakaoCafeApi.searchCafe(query = query, page = page) }
 
     override suspend fun likeItem(cafe: CafeData) {
         localDataSource.likeItem(cafe)
@@ -30,7 +28,7 @@ class KakaoCafeRepositoryImpl @Inject constructor(
         localDataSource.deleteItem(cafe)
     }
 
-    override fun saveSearchHistoryItem(searchData: SearchData) {
+    override suspend fun saveSearchHistoryItem(searchData: SearchData) {
         localDataSource.saveSearchHistoryItem(searchData)
     }
 
