@@ -17,6 +17,7 @@
             android:id="@+id/like_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:setItems="@{viewmodel.likeList}"/>
+            android:overScrollMode="never"
+            app:setItems="@{viewmodel.likeList}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
