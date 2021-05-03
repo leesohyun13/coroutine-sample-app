@@ -29,6 +29,7 @@ class CafeViewModel @Inject constructor(
 
     // TODO 이전 검색어 저장 및 다음 검색어와 비교
     suspend fun requestKakaoCafeSearch(query: String) {
+        showProgressbar.value = true
         withContext(defaultDispatcher) { kakaoCafeRepository.saveSearchHistoryItem(SearchData(search = query)) }
         val response = withContext(ioDispatcher) { kakaoCafeRepository.getSearchResult(query, 1) }
         when(response) {
