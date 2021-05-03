@@ -30,8 +30,9 @@
 
         <ImageView
             android:id="@+id/close"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="8dp"
             android:src="@drawable/outline_close_black_20"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
